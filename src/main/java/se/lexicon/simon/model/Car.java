@@ -12,6 +12,17 @@ public class Car implements Comparable<Car>{
 
     private ServiceHistory serviceHistory;
 
+    public Car() {
+    }
+
+    public Car(int id, String regNumber, LocalDate regDate, String brandName, ServiceHistory serviceHistory) {
+        this.id = id;
+        this.regNumber = regNumber;
+        this.regDate = regDate;
+        this.brandName = brandName;
+        this.serviceHistory = serviceHistory;
+    }
+
     public int getId() {
         return id;
     }
