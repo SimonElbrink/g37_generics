@@ -44,6 +44,21 @@ public class CarDaoImpl implements CarDao {
     }
 
     @Override
+    public Collection<Car> findAllCarsByBrand(String brand) {
+
+        Collection<Car> carsMatching = new ArrayList<>();
+
+        for (Car c :
+                carStorage) {
+            if (c.getBrandName().trim().equalsIgnoreCase(brand.trim())) {
+                carsMatching.add(c);
+            }
+        }
+
+        return carsMatching;
+    }
+
+    @Override
     public Car update(Car toUpdate) {
 
         Car original = findById(toUpdate.getId());
