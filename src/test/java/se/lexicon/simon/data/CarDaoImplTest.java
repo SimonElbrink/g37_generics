@@ -75,6 +75,21 @@ public class CarDaoImplTest {
 
 
     }
+    @Test
+    public void findAllCarsByBrand_BadInput() {
+
+        //Arrange
+        String brandToFind = "";
+        int expectedSize = 0;
+
+        //Act
+        Collection<Car> carsFound = carDao.findAllCarsByBrand(brandToFind);
+
+        //Assert
+        assertEquals(expectedSize, carsFound.size());
+
+
+    }
 
     @Test
     public void findAllCarsByBrand_IgnoresCasing() {
